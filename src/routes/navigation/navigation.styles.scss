@@ -1,0 +1,42 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background-color: #333;
+
+  .logo-container {
+    flex: 1;
+    text-align: left;
+    padding: 25px;
+
+    // .logo {
+    //   width: 30px;
+    //   height: 100%;
+    //   fill: #fff;
+    // }
+    .logo {
+      width: 30px;
+      height: 100%;
+      fill: rgb(183, 183, 183);
+    }
+  }
+
+  .nav-links-container {
+    flex: 2;
+    text-align: right;
+    padding: 25px;
+
+    .nav-link {
+      color: grey;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0 1rem;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
