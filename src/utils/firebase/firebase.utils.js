@@ -6,6 +6,9 @@ import {
   signInWithPopup,
   signInWithRedirect,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 // Your web app's Firebase configuration
@@ -67,4 +70,14 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
   //having a layer here allows us to use this function in other places, and is easier to debug when using third party auth providers
   if (!email || !password) return; //if when don't recieve an email or password, we don't want to do anything
   return await createUserWithEmailAndPassword(auth, email, password);
+};
+export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return; //if when don't recieve an email or password, we don't want to do anything
+  return await signInWithEmailAndPassword(auth, email, password);
+};
+
+export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback) => {
+  onAuthStateChanged(auth, callback); //always listening for auth state changes
 };

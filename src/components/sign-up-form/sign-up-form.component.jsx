@@ -31,7 +31,6 @@ const SignUpForm = () => {
         email,
         password
       );
-
       await createUserDocumentFromAuth(user, { displayName }); //pass in user's displayName
       restFormFields();
     } catch (error) {
